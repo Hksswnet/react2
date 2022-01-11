@@ -14,7 +14,10 @@ render(){
     return (
 <Fragment>
         <div>
-            <input value={this.state.inputValue}/>
+            <input 
+            value={this.state.inputValue}
+            onChange={this.handleInputChange.bind(this)}
+            />
             <button>提交</button>  </div>
             <ul>
                 <li>chinese</li>
@@ -23,6 +26,12 @@ render(){
             </Fragment>
           
     )
+}
+
+handleInputChange(e){   
+    this.setState({
+        inputValue:  e.target.value
+    }) 
 }
 
 }
